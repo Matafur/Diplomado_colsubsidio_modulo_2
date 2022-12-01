@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <div class="list-group col-12" id="list-tab" role="tablist">
+        <p class="list-group-item list-group-item-action bg-warning">Geners</p>
+        <button class="list-group-item list-group-item-action active" (click)="getGenero('animation')" data-bs-toggle="list" >Animation</button>
+        <button class="list-group-item list-group-item-action" (click)="getGenero('classic')"  data-bs-toggle="list" >Classic</button>
+        <button class="list-group-item list-group-item-action" (click)="getGenero('comedy')" data-bs-toggle="list"  >Comedy</button>
+        <button class="list-group-item list-group-item-action" (click)="getGenero('drama')" data-bs-toggle="list" >Drama</button>
+        <button class="list-group-item list-group-item-action" (click)="getGenero('horror')" data-bs-toggle="list" >Horror</button>
+        <button class="list-group-item list-group-item-action" (click)="getGenero('family')" data-bs-toggle="list"  >Family</button>
+        <button class="list-group-item list-group-item-action" (click)="getGenero('mystery')" data-bs-toggle="list" >Mystery</button>
+        <button class="list-group-item list-group-item-action" (click)="getGenero('western')" data-bs-toggle="list" >Western</button>
+      </div>
+    </div>
+    <div class="col-8">
+      <div *ngFor="let tarjetas of card" class="col-4" style="width: 50rem;">
+        <app-card  [cardInfo]="tarjetas"></app-card>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-3 " id="cardDinamic" style="width: 10rem;" *ngFor="let character of cartelera">
+      <div class="card"  >
+        <img [src]= "character.posterURL"  alt="Imagen no disponible {{character.title}}">
+          <h5 id="title" >{{character.title}}</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
